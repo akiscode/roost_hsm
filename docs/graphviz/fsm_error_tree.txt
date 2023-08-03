@@ -1,0 +1,11 @@
+digraph fsm_error_tree{
+	
+	node [shape = doublecircle]; A DComposite;
+	node [shape = circle];
+	
+	DComposite -> A;
+	DComposite -> B;
+	DComposite -> C;
+	DComposite -> Recovery;
+	
+}

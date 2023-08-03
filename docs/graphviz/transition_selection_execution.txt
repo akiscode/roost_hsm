@@ -1,0 +1,20 @@
+digraph transition_execution {
+	
+
+	
+	node [shape = doublecircle]; A DComposite F;
+	node [shape = circle];
+	
+	DComposite -> A;
+	DComposite -> B;
+    A -> F;
+    F:e -> B:e[style=dashed; label="Evt1"]
+    A -> B[dir=back; style=dashed; label="Evt2";];
+     A -> B[style=dashed; label="Evt3";];
+	
+	{
+	    rank=same;
+	    A; B
+	}
+	
+}

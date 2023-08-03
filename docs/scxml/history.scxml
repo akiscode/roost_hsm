@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" name="history" qt:editorversion="4.7.2">
+    <state id="Root">
+        <qt:editorinfo scenegeometry="204.85;153.13;131.14;-5.99;838.67;725.28" geometry="204.85;153.13;-73.71;-159.12;838.67;725.28"/>
+        <state id="Waiting">
+            <qt:editorinfo scenegeometry="218.02;295.10;158.02;245.10;266.88;197.03" geometry="13.17;141.97;-60;-50;266.88;197.03"/>
+            <transition type="external" event="E1" target="Processing">
+                <qt:editorinfo localGeometry="0.08;-199.27" endTargetFactors="2.80;10.21" movePoint="45.64;-24.34"/>
+            </transition>
+            <transition type="external" event="E3" target="History_1">
+                <qt:editorinfo localGeometry="0;244.56" movePoint="20.28;56.79"/>
+            </transition>
+            <transition type="external" event="E4" target="History_2">
+                <qt:editorinfo localGeometry="0.20;218.65" movePoint="97.36;97.35" startTargetFactors="38.39;91.98"/>
+            </transition>
+        </state>
+        <initial>
+            <qt:editorinfo scenegeometry="236.27;185.59;216.27;165.59;40;40" geometry="31.42;32.46;-20;-20;40;40"/>
+            <transition type="external" target="Waiting">
+                <qt:editorinfo endTargetFactors="28.70;23.42"/>
+            </transition>
+        </initial>
+        <state id="Processing">
+            <qt:editorinfo scenegeometry="596.29;187.61;507.61;81.65;442.20;614.06" geometry="391.44;34.48;-88.68;-105.96;442.20;614.06"/>
+            <state id="StepA">
+                <qt:editorinfo scenegeometry="762.61;210.93;702.61;160.93;120;100" geometry="166.32;23.32;-60;-50;120;100"/>
+                <transition type="external" event="E1" target="StepB">
+                    <qt:editorinfo endTargetFactors="53.92;6.04" movePoint="15.21;4.06"/>
+                </transition>
+            </state>
+            <state id="StepB">
+                <qt:editorinfo scenegeometry="677.42;493.86;572.06;331.16;357.75;342.66" geometry="81.13;306.25;-105.36;-162.70;357.75;342.66"/>
+                <state id="StepB1">
+                    <qt:editorinfo scenegeometry="652.06;508.06;592.06;458.06;120;100" geometry="-25.36;14.20;-60;-50;120;100"/>
+                    <transition type="external" event="E1" target="StepB2">
+                        <qt:editorinfo movePoint="7.10;3.04"/>
+                    </transition>
+                </state>
+                <state id="StepB2">
+                    <qt:editorinfo scenegeometry="849.81;508.07;789.81;458.07;120;100" geometry="172.39;14.21;-60;-50;120;100"/>
+                </state>
+                <initial>
+                    <qt:editorinfo scenegeometry="619.61;411.72;599.61;391.72;40;40" geometry="-57.81;-82.14;-20;-20;40;40"/>
+                    <transition type="external" target="StepB1">
+                        <qt:editorinfo endTargetFactors="22.41;20.28"/>
+                    </transition>
+                </initial>
+            </state>
+            <initial>
+                <qt:editorinfo scenegeometry="556.74;178.49;536.74;158.49;40;40" geometry="-39.55;-9.12;-20;-20;40;40"/>
+                <transition type="external" target="StepA">
+                    <qt:editorinfo endTargetFactors="12.72;16.78"/>
+                </transition>
+            </initial>
+            <history type="shallow" id="History_1">
+                <qt:editorinfo scenegeometry="547.61;588.18;527.61;568.18;40;40" geometry="-48.68;400.57;-20;-20;40;40"/>
+            </history>
+            <history type="deep" id="History_2">
+                <qt:editorinfo scenegeometry="547.61;644.98;527.61;624.98;40;40" geometry="-48.68;457.37;-20;-20;40;40"/>
+            </history>
+            <transition type="external" event="E2" target="Waiting">
+                <qt:editorinfo endTargetFactors="95.74;74.85" movePoint="-2.03;6.08" startTargetFactors="3.69;50.58"/>
+            </transition>
+        </state>
+    </state>
+</scxml>

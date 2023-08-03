@@ -1,0 +1,76 @@
+digraph handle_region_flow_chart {
+  node [shape = rect];
+  edge [];
+  
+  labelNode[label="Start\nHandle Region\nFlowchart"; shape=Mcircle];
+  
+
+    start2[label="Start at current node of Region"];
+    isOnode2[label="Is the current node\nan Orthogonal Node?"; shape=diamond;];
+    goOnode2[label="Foreach region..."; shape=Msquare;]
+    isRegion2[label="Is this node\na region node?"; shape=diamond;]
+    doesHandle2[label="Does this node\nhandle the event?"; shape=diamond;]
+    goToParent2[label="Go up one level to Parent";]
+  
+    noTransition2[label="Region \ndoes NOT \nhandle event."; shape=oval;]
+    addToQueue2[label="Add Transition to queue.\nRegion handled event."; shape=oval;]
+    
+    DoneLoop2[label="Done loop"; shape=Msquare];
+    anyHandle2[label="Did any region\nhandle the event?"; shape=diamond];
+    oNodeHandle2[label="Does orthogonal\nnode handle the event?"; shape=diamond];
+  
+    Done2[label="Region\nhandled event"; shape=oval;];
+    dotdotdot[label="..."; shape=Msquare];
+    
+    
+    {
+        rank=same;
+    
+      dotdotdot;  isOnode2; goOnode2; 
+    
+    }
+    {
+        rank=same;
+        isRegion2; noTransition2;
+    }
+    {
+        rank=same;
+        doesHandle2;  goToParent2; 
+      
+    }
+    
+    labelNode->start2;
+
+    dotdotdot->goOnode2[dir=back];
+  
+    start2 -> isOnode2;
+    goOnode2 -> isOnode2[label="Yes";dir=back];
+    isOnode2 -> isRegion2[label="No"];
+    #noTransition2->isRegion2[label="Yes"; dir=back];
+    isRegion2->noTransition2[label="Yes"];
+    isRegion2-> doesHandle2[label="No"];
+    
+    
+    goOnode2->DoneLoop2;
+    DoneLoop2->anyHandle2;
+    Done2->anyHandle2[label="Yes"; dir=back];
+    
+    { 
+      rank =same;
+      anyHandle2; Done2;
+  
+    }
+  
+    anyHandle2->oNodeHandle2[label="No"];
+    oNodeHandle2->addToQueue2[label="Yes"];
+    oNodeHandle2->goToParent2[label="No"];
+    
+  
+    doesHandle2->addToQueue2[label="Yes"];
+    doesHandle2->goToParent2[label="No"];
+    goToParent2->isRegion2;
+
+  
+  
+
+}

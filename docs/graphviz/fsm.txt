@@ -1,0 +1,10 @@
+digraph fsm {
+	rankdir=LR;
+	node [shape = doublecircle]; Off;
+	node [shape = circle];
+	Off-> On [ label = "Press Power Button" ];
+	On -> Off [ label = "Press Power Button [All Programs Exited]" ];
+	On -> Waiting [ label = "Press Power Button [!All Programs Exited]"]
+	Waiting -> Off [label = "Programs Shutdown"]
+
+}

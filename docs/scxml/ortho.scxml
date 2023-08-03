@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" name="ortho" qt:editorversion="4.7.2">
+    <state id="root">
+        <qt:editorinfo scenegeometry="393.45;211.88;168.44;-91.31;1143.53;1136.23" geometry="393.45;211.88;-225.01;-303.19;1143.53;1136.23"/>
+        <parallel id="A">
+            <qt:editorinfo scenegeometry="478.64;496.85;188.44;156.13;434.93;838.65" geometry="85.19;284.97;-290.20;-340.72;434.93;838.65"/>
+            <state id="RegionA2">
+                <qt:editorinfo scenegeometry="482.69;414.71;408.21;251.52;194.15;705.74" geometry="4.05;-82.14;-74.48;-163.19;194.15;705.74"/>
+                <state id="A21">
+                    <qt:editorinfo scenegeometry="493.85;449.18;433.85;399.18;120;100" geometry="11.16;34.47;-60;-50;120;100"/>
+                    <transition type="external" event="E2" target="A22">
+                        <qt:editorinfo endTargetFactors="50.01;12.38" movePoint="6;0"/>
+                    </transition>
+                </state>
+                <state id="A22">
+                    <qt:editorinfo scenegeometry="494.86;591.17;434.86;541.17;120;100" geometry="12.17;176.46;-60;-50;120;100"/>
+                    <transition type="external" event="E2" target="A23">
+                        <qt:editorinfo endTargetFactors="47.04;11.53" movePoint="11;0"/>
+                    </transition>
+                </state>
+                <state id="A23">
+                    <qt:editorinfo scenegeometry="498.91;737.19;438.91;687.19;120;100" geometry="16.22;322.48;-60;-50;120;100"/>
+                    <transition type="external" event="E2" target="Final_3">
+                        <qt:editorinfo movePoint="6;0"/>
+                    </transition>
+                </state>
+                <final id="Final_3">
+                    <qt:editorinfo scenegeometry="498.91;855.26;478.91;835.26;40;40" geometry="16.22;440.55;-20;-20;40;40"/>
+                </final>
+                <initial>
+                    <qt:editorinfo scenegeometry="491.82;353.86;471.82;333.86;40;40" geometry="9.13;-60.85;-20;-20;40;40"/>
+                    <transition type="internal" target="A21"/>
+                </initial>
+            </state>
+            <state id="RegionA1">
+                <qt:editorinfo scenegeometry="313.34;469.47;209.45;250.50;195.18;705.73" geometry="-165.30;-27.38;-103.89;-218.97;195.18;705.73"/>
+                <final id="Final_1">
+                    <qt:editorinfo scenegeometry="310.34;719.97;290.34;699.97;40;40" geometry="-3;250.50;-20;-20;40;40"/>
+                </final>
+                <state id="A12">
+                    <qt:editorinfo scenegeometry="311.30;586.08;251.30;536.08;120;100" geometry="-2.04;116.61;-60;-50;120;100"/>
+                    <transition type="external" event="E2" target="Final_1">
+                        <qt:editorinfo movePoint="18.24;4.84"/>
+                    </transition>
+                </state>
+                <initial>
+                    <qt:editorinfo scenegeometry="312.32;352.84;292.32;332.84;40;40" geometry="-1.02;-116.63;-20;-20;40;40"/>
+                    <transition type="internal" target="A11"/>
+                </initial>
+                <state id="A11">
+                    <qt:editorinfo scenegeometry="311.30;448.17;251.30;398.17;120;100" geometry="-2.04;-21.30;-60;-50;120;100"/>
+                    <transition type="external" event="E2" target="A12"/>
+                </state>
+            </state>
+            <transition type="external" event="E1" target="B">
+                <qt:editorinfo endTargetFactors="82.09;89.32" movePoint="42.59;2.03" startTargetFactors="59.60;1.53"/>
+            </transition>
+            <transition type="external" target="C21" event="[allJoined]">
+                <qt:editorinfo localGeometry="-0.01;31.72;483.45;31.72;483.45;-522.96" endTargetFactors="14.09;55.77" movePoint="-13;31" startTargetFactors="47.80;98.26"/>
+            </transition>
+        </parallel>
+        <state id="B">
+            <qt:editorinfo scenegeometry="408.66;66.86;348.66;16.86;120;100" geometry="15.21;-145.02;-60;-50;120;100"/>
+            <transition type="external" event="E1" target="A">
+                <qt:editorinfo endTargetFactors="43.41;1.53" movePoint="8.11;3.04" startTargetFactors="23.92;88.48"/>
+            </transition>
+        </state>
+        <initial>
+            <qt:editorinfo scenegeometry="255.52;63.82;235.52;43.82;40;40" geometry="-137.93;-148.06;-20;-20;40;40"/>
+            <transition type="external" target="B">
+                <qt:editorinfo endTargetFactors="10.48;46.50"/>
+            </transition>
+        </initial>
+        <parallel id="C">
+            <qt:editorinfo scenegeometry="724.05;344.65;643.90;156.31;648.07;838.40" geometry="330.60;132.77;-80.15;-188.34;648.07;838.40"/>
+            <state id="RegionC1">
+                <qt:editorinfo scenegeometry="749.23;386.24;663.90;248.83;188.77;715.43" geometry="25.18;41.59;-85.33;-137.41;188.77;715.43"/>
+                <state id="C11">
+                    <qt:editorinfo scenegeometry="761.41;452.15;701.41;402.15;120;100" geometry="12.18;65.91;-60;-50;120;100"/>
+                    <transition type="external" event="/turnOnG1" target="C12">
+                        <qt:editorinfo endTargetFactors="53.40;9.03" movePoint="-49.90;1.08"/>
+                    </transition>
+                </state>
+                <initial>
+                    <qt:editorinfo scenegeometry="763;351.76;743;331.76;40;40" geometry="13.77;-34.48;-20;-20;40;40"/>
+                    <transition type="internal" target="C11"/>
+                </initial>
+                <final id="Final_6">
+                    <qt:editorinfo scenegeometry="756.91;863.04;736.91;843.04;40;40" geometry="7.68;476.80;-20;-20;40;40"/>
+                </final>
+                <state id="C12">
+                    <qt:editorinfo scenegeometry="756.91;632.46;696.91;582.46;120;100" geometry="7.68;246.22;-60;-50;120;100"/>
+                    <transition type="external" event="E5" target="Final_6">
+                        <qt:editorinfo movePoint="-26.11;3.25"/>
+                    </transition>
+                    <transition type="external" event="E4" target="C11">
+                        <qt:editorinfo endTargetFactors="72.70;88.86" movePoint="44.55;9.76" startTargetFactors="77.01;10.68"/>
+                    </transition>
+                </state>
+            </state>
+            <state id="RegionC2">
+                <qt:editorinfo scenegeometry="942.08;398.40;867.15;249.09;186.46;711.13" geometry="218.03;53.75;-74.93;-149.31;186.46;711.13"/>
+                <state id="C21">
+                    <qt:editorinfo scenegeometry="963.37;451.14;903.37;401.14;120;100" geometry="21.29;52.74;-60;-50;120;100"/>
+                    <transition type="external" event="E3[G1]" target="C22">
+                        <qt:editorinfo movePoint="21.27;3.25"/>
+                    </transition>
+                </state>
+                <state id="C22">
+                    <qt:editorinfo scenegeometry="963.38;583.98;903.38;533.98;120;100" geometry="21.30;185.58;-60;-50;120;100"/>
+                    <transition type="external" event="E3" target="Final_7">
+                        <qt:editorinfo movePoint="-31;-1"/>
+                    </transition>
+                    <transition type="external" event="E4" target="B">
+                        <qt:editorinfo localGeometry="63.14;1.09;63.14;-508.67" endTargetFactors="88.54;71.07" movePoint="-6.50;-258.19" startTargetFactors="75.98;62.62"/>
+                    </transition>
+                </state>
+                <initial>
+                    <qt:editorinfo scenegeometry="965.55;351.76;945.55;331.76;40;40" geometry="23.47;-46.64;-20;-20;40;40"/>
+                    <transition type="internal" target="C21">
+                        <qt:editorinfo movePoint="9.13;-1.01"/>
+                    </transition>
+                </initial>
+                <final id="Final_7">
+                    <qt:editorinfo scenegeometry="965.41;710.75;945.41;690.75;40;40" geometry="23.33;312.35;-20;-20;40;40"/>
+                </final>
+            </state>
+            <state id="RegionC3">
+                <qt:editorinfo scenegeometry="1140.85;388.26;1069.98;248.02;194.48;712.20" geometry="416.80;43.61;-70.87;-140.24;194.48;712.20"/>
+                <state id="C31">
+                    <qt:editorinfo scenegeometry="1165.19;450.11;1105.19;400.11;120;100" geometry="24.34;61.85;-60;-50;120;100"/>
+                    <transition type="external" event="E3" target="C32">
+                        <qt:editorinfo movePoint="9;0"/>
+                    </transition>
+                </state>
+                <state id="C32">
+                    <qt:editorinfo scenegeometry="1165.20;605.28;1105.20;555.28;120;100" geometry="24.35;217.02;-60;-50;120;100"/>
+                    <transition type="external" target="C33">
+                        <qt:editorinfo movePoint="7;0"/>
+                    </transition>
+                </state>
+                <state id="C33">
+                    <qt:editorinfo scenegeometry="1165.19;746.25;1105.19;696.25;120;100" geometry="24.34;357.99;-60;-50;120;100"/>
+                    <transition type="external" event="E3" target="Final_8">
+                        <qt:editorinfo movePoint="5;-1"/>
+                    </transition>
+                    <transition type="external" event="E4" target="A23">
+                        <qt:editorinfo localGeometry="-105.72;-0.22;-105.72;225.76;-533.82;225.76;-533.82;-0.22" endTargetFactors="88.37;58.84" movePoint="-56.41;2.17"/>
+                    </transition>
+                </state>
+                <initial>
+                    <qt:editorinfo scenegeometry="1164.17;350.75;1144.17;330.75;40;40" geometry="23.32;-37.51;-20;-20;40;40"/>
+                    <transition type="internal" target="C31"/>
+                </initial>
+                <final id="Final_8">
+                    <qt:editorinfo scenegeometry="1166.20;849.68;1146.20;829.68;40;40" geometry="25.35;461.42;-20;-20;40;40"/>
+                </final>
+            </state>
+            <transition type="external" event="[allJoined]" target="B">
+                <qt:editorinfo localGeometry="-0.03;-536.81" endTargetFactors="88.49;21.84" movePoint="-141.59;-69.90"/>
+            </transition>
+        </parallel>
+    </state>
+</scxml>

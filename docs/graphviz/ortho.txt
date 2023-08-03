@@ -1,0 +1,48 @@
+digraph ortho {
+	
+	node [shape = doublecircle]; CourseAttempt Studying;
+	node [shape = square]; Top; LabRegion; TermProjectRegion; FinalTestRegion;
+	node [shape = circle];
+	
+
+	subgraph cluster_0 {
+	    	Top -> CourseAttempt;
+
+	CourseAttempt -> Studying;
+	CourseAttempt -> Failed;
+	CourseAttempt ->Passed
+    label="Top Region";
+    labeljust=l;
+    color=blue;
+    }
+  
+    Studying->LabRegion;
+    Studying->TermProjectRegion;
+    Studying->FinalTestRegion;
+    
+  	subgraph cluster_1 {
+	LabRegion -> Lab1;
+	LabRegion -> Lab2;
+	LabRegion -> Join1;
+    label="Lab Region";
+    labeljust=l;
+    color=blue;
+   }
+  
+    subgraph cluster_2 {
+	TermProjectRegion -> TermProject;
+	TermProjectRegion -> Join2;
+    label="Term\nProject Region";
+    labeljust=r;
+    color=blue;
+  }
+  
+      subgraph cluster_3 {
+	FinalTestRegion -> FinalTest;
+	FinalTestRegion -> Join3;
+    label="Final Test Region";
+    labeljust=r;
+    color=blue;
+  }
+	
+}

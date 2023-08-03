@@ -1,0 +1,47 @@
+digraph partial_transition_selection_algo {
+  node [shape = rect];
+  edge [];
+
+  start [label="Start at current node of Top Region"];
+  isOnode[label="Is the current node\nan Orthogonal Node?"; shape=diamond;];
+  goOnode[label="Go to \nOrthogonal Nodes \nand Regions Section"; shape=oval;]
+  isRegion[label="Is this node\na region node?"; shape=diamond;]
+  doesHandle[label="Does this node\nhandle the event?"; shape=diamond;]
+  goToParent[label="Go up one level to Parent";]
+  
+  noTransition[label="No Transition fired."; shape=oval;]
+  addToQueue[label="Add Transition to queue"; shape=oval;]
+  
+  {
+    rank=same;
+    
+    isOnode; goOnode;
+    
+  }
+  {
+      rank=same;
+      isRegion; noTransition;
+  }
+  {
+      rank=same;
+      doesHandle;  goToParent; 
+      #addToQueue;
+  }
+
+
+  
+  start -> isOnode;
+  goOnode -> isOnode[label="Yes";dir=back];
+  isOnode -> isRegion[label="No"];
+  noTransition->isRegion[label="Yes"; dir=back];
+  isRegion-> doesHandle[label="No"];
+  
+
+  doesHandle->addToQueue[label="Yes"];
+  doesHandle->goToParent[label="No"];
+   
+  goToParent->isRegion;
+  
+  
+
+}

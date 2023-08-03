@@ -1,0 +1,77 @@
+digraph transition_selection_algo {
+  node [shape = rect];
+  edge [];
+  
+
+  # ---
+  
+  #start2->goOnode[dir=back];
+  
+  goToHandle->goOnode[dir=back];
+  
+  goToHandle[label="Go to\nHandle Region\nFlowchart"; shape=Mcircle];
+
+  start [label="Start at current node of Top Region"];
+  isOnode[label="Is the current node\nan Orthogonal Node?"; shape=diamond;];
+  goOnode[label="Foreach region\nin node..."; shape=Msquare;]
+  isRegion[label="Is this node\na region node?"; shape=diamond;]
+  doesHandle[label="Does this node\nhandle the event?"; shape=diamond;]
+  goToParent[label="Go up one level to Parent";]
+  
+  noTransition[label="No Transition fired."; shape=oval;]
+  addToQueue[label="Add Transition to queue"; shape=oval;]
+  
+  DoneLoop[label="Done loop"; shape=Msquare];
+  anyHandle[label="Did any region\nhandle the event?"; shape=diamond];
+  oNodeHandle[label="Does orthogonal\nnode handle the event?"; shape=diamond];
+  
+  Done[label="Done"; shape=oval;];
+  
+  {
+    rank=same;
+    
+    goToHandle; isOnode; goOnode;
+    
+  }
+  {
+      rank=same;
+      isRegion; noTransition;
+  }
+  {
+      rank=same;
+      doesHandle;  goToParent; 
+      #addToQueue;
+  }
+
+
+  
+  start -> isOnode;
+  goOnode -> isOnode[label="Yes";dir=back];
+  isOnode -> isRegion[label="No"];
+  noTransition->isRegion[label="Yes"; dir=back];
+  isRegion-> doesHandle[label="No"];
+  
+  goOnode->DoneLoop;
+  DoneLoop->anyHandle;
+  
+  Done->anyHandle[label="Yes"; dir=back];
+  { 
+      rank =same;
+      anyHandle; Done;
+  
+  }
+  
+  anyHandle->oNodeHandle[label="No"];
+  oNodeHandle->addToQueue[label="Yes"];
+  oNodeHandle->goToParent[label="No"];
+
+  doesHandle->addToQueue[label="Yes"];
+  doesHandle->goToParent[label="No"];
+   
+  goToParent->isRegion;
+  
+
+  
+  
+
+}

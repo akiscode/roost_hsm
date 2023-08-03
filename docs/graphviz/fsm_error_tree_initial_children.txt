@@ -1,0 +1,10 @@
+digraph fsm_error_tree_initial_children{
+	
+	node [shape = doublecircle]; A DComposite F;
+	node [shape = circle];
+	
+	DComposite -> A;
+	DComposite -> B;
+    A -> F;
+	
+}

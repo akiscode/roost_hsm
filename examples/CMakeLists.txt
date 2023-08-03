@@ -1,0 +1,5 @@
+add_subdirectory(instastart)
+add_subdirectory(quickstart)
+add_subdirectory(example1)
+add_subdirectory(ortho)
+add_subdirectory(history)

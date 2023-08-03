@@ -1,0 +1,10 @@
+digraph leaf_and_composite_states {
+	
+	node [shape = doublecircle]; root S1;
+	node [shape = circle];
+
+    root -> S1;
+    root -> S2;
+
+	
+}

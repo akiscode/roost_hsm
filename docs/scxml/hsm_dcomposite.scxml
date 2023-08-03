@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" name="asd" qt:editorversion="4.7.2" xmlns:qt="http://www.qt.io/2015/02/scxml-ext">
+    <state id="DComposite">
+        <qt:editorinfo geometry="164.29;148.05;-78.54;-141.66;511.50;465.15" scenegeometry="164.29;148.05;85.75;6.39;511.50;465.15"/>
+        <state id="A">
+            <qt:editorinfo geometry="8.11;45.64;-60;-50;120;100" scenegeometry="172.40;193.69;112.40;143.69;120;100"/>
+            <transition type="external" event="E1" target="B">
+                <qt:editorinfo endTargetFactors="10.48;51.74" movePoint="7.10;8.11"/>
+            </transition>
+        </state>
+        <state id="B">
+            <qt:editorinfo geometry="177.21;44.64;-60;-50;120;100" scenegeometry="341.50;192.69;281.50;142.69;120;100"/>
+            <transition type="external" event="E2" target="C">
+                <qt:editorinfo endTargetFactors="8.95;48.26" movePoint="9.12;10.14"/>
+            </transition>
+        </state>
+        <state id="C">
+            <qt:editorinfo geometry="352.96;45.64;-60;-50;120;100" scenegeometry="518.26;182.54;458.26;132.54;120;100"/>
+        </state>
+        <state id="Recovery">
+            <qt:editorinfo geometry="177.21;213.98;-60;-50;120;100" scenegeometry="341.50;362.03;281.50;312.03;120;100"/>
+        </state>
+        <transition type="internal" event="Error" target="Recovery">
+            <qt:editorinfo startTargetFactors="1.52;78.08" endTargetFactors="9.74;59.56"/>
+        </transition>
+        <initial>
+            <qt:editorinfo geometry="10.14;-53.75;-20;-20;40;40" scenegeometry="174.43;94.30;154.43;74.30;40;40"/>
+            <transition type="external" target="A">
+                <qt:editorinfo endTargetFactors="51.44;13.26"/>
+            </transition>
+        </initial>
+    </state>
+</scxml>

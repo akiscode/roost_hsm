@@ -1,0 +1,11 @@
+digraph fsm_error {
+	rankdir=LR;
+	node [shape = doublecircle]; A;
+	node [shape = circle];
+	A-> B [ label = "E1" ];
+	A -> Recovery [label = "Error"];
+	B -> C [ label = "E2" ];
+	B -> Recovery [label = "Error"];
+	C -> Recovery [ label = "Error" ];
+	
+}
